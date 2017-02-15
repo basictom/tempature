@@ -7,6 +7,33 @@ button.addEventListener("click", displayUserData);
 button.addEventListener("checked", toCelsius);
 button.addEventListener("checked", toFahrenheit);
 
+function toCelsius(){
+  var userInputC = input.value;
+  var convertUserC = ((userInputC - 32) / 1.8);
+   if (convertUserC < 32){
+     output.style.color = "red";
+   }else if(converUserC > 0){
+     output.style.color = "blue";
+   }else{
+     output.style.color = "green";
+   }
+  output.innerHTML = convertUserC + " Degrees Celcius";
+}
+
+
+function toFahrenheit(){
+  var userInputF = input.value;
+  var convertUserF = ((userInputF * 1.8) + 32);
+    if (convertUserF > 90){
+      output.style.color = "red";
+    }else if(convertUserF < 32){
+      output.style.color = "blue";
+    }else{
+      output.style.color = "green";
+    }
+  output.innerHTML = convertUserF + " Degrees Fahrenheit";
+}
+
 
 function displayUserData () {
  if (document.getElementById("cels").checked) {
@@ -15,27 +42,4 @@ function displayUserData () {
    toFahrenheit();
    console.log("fahrenheit checked");
  }
-}
-
-
-
-
-
-
-
-
-
-function toCelsius(){
-  var userInputC = input.value;
-  var convertUserC = ((userInputC - 32) / 1.8);
-  output.innerHTML = convertUserC + " Degrees Celcius";
- console.log("cels test", convertUserC);
-}
-
-
-function toFahrenheit(){
-  var userInputF = input.value;
-  var convertUserF = ((userInputF * 1.8) + 32);
-  output.innerHTML = convertUserF + " Degrees Fahrenheit";
- console.log("fahr test", convertUserF);
 }
